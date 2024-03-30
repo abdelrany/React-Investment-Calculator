@@ -25,10 +25,11 @@ function App() {
     <>
       <Header />
       <UserInput onChangeInput={handleChange} />
-      {!isInputValid && (
+      {!isInputValid ? (
         <p className="center">Please enter a duration greater then 0 </p>
+      ) : (
+        <Table userInput={userInput} />
       )}
-      {isInputValid && <Table userInput={userInput} />}
     </>
   );
 }
